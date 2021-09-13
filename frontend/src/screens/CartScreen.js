@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { addToCart } from '../action/cartActions';
+import { addToCart, removeFromCart } from '../action/cartActions';
 import MessageBox from '../components/MessageBox';
 
 export default function CartScreen(props) {
@@ -18,11 +18,12 @@ export default function CartScreen(props) {
     }
   }, [dispatch, productId, qty]);
   const removeFromCartHandler = (id) => {
-
+    dispatch(removeFromCart(id));
   }
   const checkoutHandler = () => {
     props.history.push('/signin?redirect=shipping');
   }
+  
   return (
     <div className="row top">
       <div className="col-2">
