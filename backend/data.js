@@ -1,7 +1,22 @@
+import bcrypt from 'bcryptjs'
+
 const data = {
+  users: [
+    {
+      name: 'Baba',
+      email: 'admin@example.com',
+      password: bcrypt.hashSync('1234', 8),
+      isAdmin: true,
+    },
+    {
+      name: 'Arifin',
+      email: 'user@example.com',
+      password: bcrypt.hashSync('1234', 8),
+      isAdmin: false,
+    },
+  ],
   products: [
     {
-      _id: '1',
       name: 'Nike Slim Shirt',
       category: 'Shirts',
       image: '/image/product1.png',
@@ -13,7 +28,6 @@ const data = {
       description: 'high quality product',
     },
     {
-      _id: '2',
       name: 'Uniqlo Nice model',
       category: 'Sweeter',
       image: '/image/product2.png',
@@ -25,7 +39,6 @@ const data = {
       description: 'high quality product',
     },
     {
-      _id: '3',
       name: 'Ripcurl cloud',
       category: 'School Bag',
       image: '/image/product3.png',
@@ -37,7 +50,6 @@ const data = {
       description: 'high quality product',
     },
     {
-      _id: '4',
       name: 'Cute Baby Clothing',
       category: 'Baby Cloth',
       image: '/image/product4.png',
@@ -49,7 +61,6 @@ const data = {
       description: 'high quality product',
     },
     {
-      _id: '5',
       name: 'Volkswagen T-shirt',
       category: 'T-shirts',
       image: '/image/product5.png',
@@ -61,7 +72,6 @@ const data = {
       description: 'high quality product',
     },
     {
-      _id: '6',
       name: 'Uniq Pouch Bag',
       category: 'Pouch Bag',
       image: '/image/product6.png',
@@ -73,7 +83,6 @@ const data = {
       description: 'high quality product',
     },
     {
-      _id: '7',
       name: 'Uniqlo Women T-shirt',
       category: 'T-shirt',
       image: '/image/product7.png',
@@ -85,7 +94,6 @@ const data = {
       description: 'high quality product',
     },
     {
-      _id: '8',
       name: 'Billabong Surfing Short Pants',
       category: 'Pants',
       image: '/image/product8.png',
@@ -97,7 +105,6 @@ const data = {
       description: 'high quality product',
     },
     {
-      _id: '9',
       name: 'Transparant Jacket',
       category: 'Jacket',
       image: '/image/product9.png',
