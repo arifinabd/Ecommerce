@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-
-import Rating from '../components/Rating';
+import { useDispatch, useSelector } from 'react-redux'
+import {Link} from 'react-router-dom'
+import { detailsProduct } from '../action/productActions';
 import LoadingBox from '../components/LoadingBox';
+import Rating from '../components/Rating';
 import MessageBox from '../components/MessageBox';
-import { detailsProduct } from '../action/productAction';
+
 
 export default function ProductScreen(props) {
   const dispatch = useDispatch();
-  const productId = props.match.params.id;
   const [qty, setQty] = useState(1);
+  const productId = props.match.params.id;
   const  productDetails = useSelector(state => state.productDetails);
   const { loading, error, product } = productDetails;
 
@@ -46,7 +46,19 @@ export default function ProductScreen(props) {
                     numReviews={product.numReviews}
                   ></Rating>
                 </li>
-                <li>Price : $ {product.price}</li>
+                <li>
+                    <p>{product.name}</p>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium totam, dolorum incidunt autem optio ab maxime. Voluptate ex asperiores debitis quibusdam tenetur laudantium molestias doloribus odio odit, quia laborum aliquam.</p>
+                    <form action="">
+                        <label for="size">Size:</label>
+                        <select id="size" name="size-chart">
+                            <option value="Small">Small</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Large">Large</option>
+                        </select>
+                    </form>
+                </li>
+                {/* <li>Price : $ {product.price}</li> */}
                 <li>
                   Description:
                   <p>{product.description}</p>
